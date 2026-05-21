@@ -672,8 +672,8 @@ export function RegulacionDashboard() {
               </div>
             )}
 
-            {/* Canvas de la Hoja de Papel A4 */}
-            <div className="relative bg-slate-200/50 p-4 sm:p-8 rounded-2xl border border-slate-250 shadow-inner overflow-hidden flex justify-center">
+            {/* Canvas del lector PDF */}
+            <div className="relative bg-slate-200/50 p-4 sm:p-6 rounded-2xl border border-slate-250 shadow-inner overflow-hidden flex justify-center h-[78vh] min-h-[620px]">
               
               {/* Overlay de Carga durante la Descarga */}
               {isDownloading && (
@@ -700,7 +700,7 @@ export function RegulacionDashboard() {
               <div
                 id="printable-document"
                 ref={documentRef}
-                className="bg-white text-slate-800 w-full max-w-[800px] border border-slate-350 shadow-2xl p-6 sm:p-12 relative flex flex-col justify-between transition-all duration-200 aspect-[1/1.3] md:aspect-[1/1.41] overflow-y-auto sm:overflow-visible"
+                className="bg-white text-slate-800 w-full max-w-[850px] h-full border border-slate-350 shadow-2xl p-6 sm:p-10 relative flex flex-col justify-start transition-all duration-200 overflow-y-auto"
                 style={{ fontSize: `${zoomScale}%` }}
               >
                 {/* Sello de agua del fondo oficial */}
@@ -708,7 +708,7 @@ export function RegulacionDashboard() {
                   <Logo showText={false} variant="vertical" className="w-[450px] h-[450px]" />
                 </div>
 
-                <div className="relative z-10 space-y-6">
+                <div className="relative z-10 space-y-6 min-h-full">
                   {/* Membrete Oficial */}
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-slate-300 gap-4">
                     <Logo showText={true} textColor="text-slate-800" className="scale-90 origin-left" />
@@ -736,7 +736,7 @@ export function RegulacionDashboard() {
                   </div>
 
                   {/* Cuerpo del Documento */}
-                  <div className="space-y-5 text-xs sm:text-sm text-slate-700 leading-relaxed text-justify">
+                  <div className="space-y-5 text-xs sm:text-sm text-slate-700 leading-relaxed text-justify pb-6">
                     {activeDoc.sections.map((section, idx) => (
                       <div key={idx} className="space-y-2">
                         <h4 className="font-extrabold text-slate-900 border-l-2 border-[#e2532a] pl-2 text-xs sm:text-sm uppercase tracking-wide">
@@ -891,8 +891,17 @@ export function RegulacionDashboard() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs flex flex-col items-center text-center gap-4">
-              <div className="w-full h-28 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center px-3">
-                <span className="text-emerald-800 text-lg font-black tracking-tight">BIENESTAR FAMILIAR</span>
+              <div className="w-full h-28 rounded-xl bg-white border border-emerald-100 flex items-center justify-center px-3 overflow-hidden">
+                <svg viewBox="0 0 320 120" className="w-full h-full" role="img" aria-label="Bienestar Familiar">
+                  <rect width="320" height="120" fill="white" />
+                  <path d="M88 92c-17-25-18-48-1-65 8-8 18-12 30-12 8 0 16 2 23 6-8 7-14 15-17 24-4 12-4 26 0 44H88Z" fill="#74c044" />
+                  <path d="M232 92c17-25 18-48 1-65-8-8-18-12-30-12-8 0-16 2-23 6 8 7 14 15 17 24 4 12 4 26 0 44h35Z" fill="#74c044" />
+                  <circle cx="138" cy="33" r="10" fill="#231f20" />
+                  <circle cx="160" cy="26" r="10" fill="#231f20" />
+                  <circle cx="182" cy="33" r="10" fill="#231f20" />
+                  <path d="M131 58c0-17 13-30 29-30s29 13 29 30v28h-58V58Z" fill="#231f20" opacity="0.95" />
+                  <rect x="116" y="95" width="88" height="6" rx="3" fill="#74c044" />
+                </svg>
               </div>
               <a
                 href="https://www.icbf.gov.co/"
@@ -905,8 +914,15 @@ export function RegulacionDashboard() {
             </div>
 
             <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs flex flex-col items-center text-center gap-4">
-              <div className="w-full h-28 rounded-xl bg-lime-50 border border-lime-100 flex items-center justify-center px-3">
-                <span className="text-lime-900 text-lg font-black tracking-tight">CENTRO CIBERNETICO POLICIAL</span>
+              <div className="w-full h-28 rounded-xl bg-white border border-lime-100 flex items-center justify-center px-3 overflow-hidden">
+                <svg viewBox="0 0 320 120" className="w-full h-full" role="img" aria-label="Centro Cibernetico Policial">
+                  <rect width="320" height="120" fill="white" />
+                  <circle cx="120" cy="64" r="35" fill="none" stroke="#8bc34a" strokeWidth="6" opacity="0.85" />
+                  <circle cx="120" cy="64" r="24" fill="none" stroke="#cddc39" strokeWidth="5" opacity="0.9" />
+                  <circle cx="120" cy="64" r="14" fill="#1f2937" />
+                  <text x="160" y="54" fontFamily="Arial, sans-serif" fontSize="22" fontWeight="700" fill="#6b7280">CENTRO</text>
+                  <text x="160" y="80" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="800" fill="#315b54">CIBERNÉTICO POLICIAL</text>
+                </svg>
               </div>
               <a
                 href="https://caivirtual.policia.gov.co/"
@@ -919,8 +935,15 @@ export function RegulacionDashboard() {
             </div>
 
             <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs flex flex-col items-center text-center gap-4">
-              <div className="w-full h-28 rounded-xl bg-fuchsia-50 border border-fuchsia-100 flex items-center justify-center px-3">
-                <span className="text-fuchsia-800 text-lg font-black tracking-tight">En TIC Confio +</span>
+              <div className="w-full h-28 rounded-xl bg-white border border-fuchsia-100 flex items-center justify-center px-3 overflow-hidden">
+                <svg viewBox="0 0 320 120" className="w-full h-full" role="img" aria-label="En TIC Confio">
+                  <rect width="320" height="120" fill="white" />
+                  <rect x="92" y="18" width="136" height="84" rx="22" fill="#c21872" />
+                  <text x="120" y="54" fontFamily="Arial, sans-serif" fontSize="28" fontWeight="900" fill="white">en</text>
+                  <text x="157" y="52" fontFamily="Arial, sans-serif" fontSize="30" fontWeight="900" fill="#ffeb3b">TIC</text>
+                  <text x="116" y="80" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="900" fill="white">Confio</text>
+                  <text x="198" y="80" fontFamily="Arial, sans-serif" fontSize="28" fontWeight="900" fill="white">+</text>
+                </svg>
               </div>
               <a
                 href="https://ciberpaz.gov.co/"
@@ -933,8 +956,15 @@ export function RegulacionDashboard() {
             </div>
 
             <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs flex flex-col items-center text-center gap-4">
-              <div className="w-full h-28 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center px-3">
-                <span className="text-blue-900 text-lg font-black tracking-tight">FISCALIA GENERAL DE LA NACION</span>
+              <div className="w-full h-28 rounded-xl bg-white border border-blue-100 flex items-center justify-center px-3 overflow-hidden">
+                <svg viewBox="0 0 320 120" className="w-full h-full" role="img" aria-label="Fiscalia General de la Nacion">
+                  <rect width="320" height="120" fill="white" />
+                  <rect x="114" y="18" width="92" height="84" rx="8" fill="#23408e" />
+                  <path d="M160 28l10 10-10 10-10-10 10-10Z" fill="#f1c40f" />
+                  <rect x="154" y="30" width="12" height="60" rx="6" fill="#f1c40f" />
+                  <path d="M136 48l10-10 10 10-10 10-10-10Zm38-10l10 10-10 10-10-10 10-10Zm-38 34l10-10 10 10-10 10-10-10Zm38-10l10 10-10 10-10-10 10-10Z" fill="#f1c40f" opacity="0.95" />
+                  <text x="160" y="104" textAnchor="middle" fontFamily="Georgia, serif" fontSize="24" fontWeight="700" fill="#d7261e">FISCALÍA</text>
+                </svg>
               </div>
               <a
                 href="https://www.fiscalia.gov.co/colombia/servicios-de-informacion-al-ciudadano/donde-y-como-denunciar/"
