@@ -104,16 +104,14 @@ export function EntertainmentSection() {
           >
             {/* Video container */}
             <div className="relative w-full max-w-lg aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-orange-500/15 border border-slate-200 bg-slate-100 z-10 group">
-              <video
+              <iframe 
                 className="absolute inset-0 h-full w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster="/herofond.jpg"
-              >
-                <source src="/video.mp4" type="video/mp4" />
-              </video>
+                src="https://www.youtube.com/embed/H2IE0UAbCB8?autoplay=1&loop=1&mute=1&playlist=H2IE0UAbCB8&controls=0&showinfo=0&autohide=1&modestbranding=1" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen>
+              </iframe>
 
               <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 via-white/10 to-transparent" />
               <div className="absolute inset-0 bg-white/8 backdrop-blur-[1px]" />
