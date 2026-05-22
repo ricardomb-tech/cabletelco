@@ -1,5 +1,0 @@
-{
-  "name": "cabletelco-next",
-  "main": "./.wrangler/publish/index.js",
-  "compatibility_date": "2024-05-01"
-}
