@@ -68,7 +68,7 @@ export default function QuienesSomos() {
               Conectando tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">mundo</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed mb-16">
-              Empresa dedicada al servicio de telecomunicaciones a través de redes HFC y GPON.
+              Somos OsmasTV SAS, una empresa dedicada al servicio de telecomunicaciones a través de redes HFC y GPON, comprometida con ofrecer la mejor conexión y servicio en la región.
             </p>
 
             {/* Bouncing scroll indicator (ahora debajo del texto) */}

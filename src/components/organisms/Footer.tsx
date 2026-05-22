@@ -16,6 +16,8 @@ export function Footer() {
               <Logo textColor="text-[#e2532a]" />
             </Link>
             <p className="text-sm text-slate-500 mb-4">
+              Cabletelco es una marca operada por OSMAS TV S.A.S.
+              <br />
               Conectando hogares y empresas con la red de fibra óptica más estable y veloz de la región.
             </p>
             <div className="text-xs text-slate-500 space-y-1 border-t border-slate-200 pt-3">
