@@ -6,8 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "preview": "npx open-next build && wrangler pages dev .open-next --env .env.local",
-    "deploy": "npx open-next build && wrangler pages deploy .open-next",
     "lint": "eslint"
   },
   "dependencies": {
