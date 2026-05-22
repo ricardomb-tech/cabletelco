@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { PricingCard } from '@/components/molecules/PricingCard';
 import { FeaturesSection } from '@/components/organisms/FeaturesSection';
@@ -82,11 +83,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-28 pb-20 lg:pt-0 lg:pb-0 lg:h-[680px] xl:h-[780px] flex items-center overflow-hidden bg-gradient-to-r from-slate-50 via-slate-50 to-[#dad5e0] border-b border-slate-100">
         {/* Full-width Background Image */}
-        <div className="absolute inset-0 z-0 select-none pointer-events-none flex justify-end items-center">
-          <img
+        <div className="absolute inset-0 z-0 select-none pointer-events-none">
+          <Image
             src="/herofond.jpg"
             alt="Conectividad Cabletelco"
-            className="w-full h-full object-cover object-right sm:object-center lg:w-auto lg:h-[82%] lg:object-contain lg:object-right lg:pr-12 xl:pr-20"
+            fill
+            priority
+            className="object-cover object-right sm:object-center"
             style={{
               maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent), linear-gradient(to bottom, transparent, black 8%, black 72%, transparent 95%)',
               WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent), linear-gradient(to bottom, transparent, black 8%, black 72%, transparent 95%)',
